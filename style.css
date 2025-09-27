@@ -1,100 +1,47 @@
-/* style.css */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mun Rowing Team</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Hero / Header -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="logo-placeholder">MUN Rowing Team</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="regatta.html">Regatta</a>
+        <a href="events.html">Events</a>
+        <a href="https://www.instagram.com/munrowingclub/" target="_blank">Instagram</a>
+      </nav>
+    </div>
+  </header>
 
-/* Reset */
-body, h1, h2, h3, p {
-  margin: 0;
-  padding: 0;
-}
-body {
-  font-family: "Segoe UI", Roboto, sans-serif;
-  background: url('img/quidi-vidi.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  line-height: 1.6;
-}
+  <!-- Main Content -->
+  <main>
+    <section class="card">
+      <h2>About</h2>
+      <p>Welcome to the Memorial University Rowing Club! We are a dedicated team of student athletes passionate about rowing in St. John’s, training on Quidi Vidi Lake and representing MUN at regattas and competitions.</p>
+    </section>
 
-/* Overlay for readability */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: -1;
-}
+    <section class="card">
+      <h2>Upcoming Events</h2>
+      <p>Stay tuned for our upcoming races and training sessions. Major events will be posted here with details and photos.</p>
+    </section>
 
-/* Header */
-header {
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(6px);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-nav {
-  margin-top: 10px;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: 500;
-  transition: color 0.2s ease;
-}
-nav a:hover {
-  color: #f44336;
-}
+    <section class="card">
+      <h2>Join the Team</h2>
+      <p>Interested in rowing with us? We welcome new members of all skill levels. Reach out through our Instagram or come see us at practice!</p>
+      <a href="https://www.instagram.com/munrowingclub/" target="_blank" class="btn">Follow us on Instagram</a>
+    </section>
+  </main>
 
-/* Container sections */
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px 20px;
-  background: rgba(0,0,0,0.65);
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-/* Headings */
-h2, h3 {
-  color: #f44336;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-/* Image boxes */
-.img-box {
-  margin: 20px 0;
-}
-.img-box img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease;
-}
-.img-box img:hover {
-  transform: scale(1.03);
-}
-
-/* Footer */
-footer {
-  background: rgba(0,0,0,0.8);
-  color: #bbb;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  margin-top: 40px;
-}
-footer a {
-  color: #f44336;
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
-}
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Memorial University Rowing Club | <a href="https://www.instagram.com/munrowingclub/" target="_blank">Instagram</a></p>
+  </footer>
+</body>
+</html>
