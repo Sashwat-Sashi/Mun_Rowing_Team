@@ -1,47 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mun Rowing Team</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Hero / Header -->
-  <header class="hero">
-    <div class="hero-content">
-      <div class="logo-placeholder">MUN Rowing Team</div>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="regatta.html">Regatta</a>
-        <a href="events.html">Events</a>
-        <a href="https://www.instagram.com/munrowingclub/" target="_blank">Instagram</a>
-      </nav>
-    </div>
-  </header>
+/* General Reset */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
 
-  <!-- Main Content -->
-  <main>
-    <section class="card">
-      <h2>About</h2>
-      <p>Welcome to the Memorial University Rowing Club! We are a dedicated team of student athletes passionate about rowing in St. John’s, training on Quidi Vidi Lake and representing MUN at regattas and competitions.</p>
-    </section>
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #0d47a1, #1976d2, #42a5f5);
+  color: #fff;
+  line-height: 1.6;
+}
 
-    <section class="card">
-      <h2>Upcoming Events</h2>
-      <p>Stay tuned for our upcoming races and training sessions. Major events will be posted here with details and photos.</p>
-    </section>
+/* Hero / Header */
+.hero {
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo-placeholder {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+nav {
+  margin-top: 10px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+nav a:hover {
+  color: #ffeb3b;
+}
 
-    <section class="card">
-      <h2>Join the Team</h2>
-      <p>Interested in rowing with us? We welcome new members of all skill levels. Reach out through our Instagram or come see us at practice!</p>
-      <a href="https://www.instagram.com/munrowingclub/" target="_blank" class="btn">Follow us on Instagram</a>
-    </section>
-  </main>
+/* Main container */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Memorial University Rowing Club | <a href="https://www.instagram.com/munrowingclub/" target="_blank">Instagram</a></p>
-  </footer>
-</body>
-</html>
+/* Cards (About / Events / Join) */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.card h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #ffeb3b;
+}
+.card p {
+  color: #f0f0f0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ffeb3b;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: #fdd835;
+}
+
+/* Footer */
+footer {
+  background: rgba(0,0,0,0.8);
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+}
+footer a {
+  color: #ffeb3b;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
