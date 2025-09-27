@@ -1,47 +1,232 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mun Rowing Team</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MUN Rowing Team</title>
+
+  <!-- Inline styles so the page looks right even if external CSS isn't loading -->
+  <style>
+    :root{
+      --bg-1:#0b4f6c;
+      --bg-2:#1578a6;
+      --accent:#ffd34d; /* water-sport highlight */
+      --card-bg: rgba(255,255,255,0.06);
+      --card-border: rgba(255,255,255,0.10);
+      --text: #f3f7fb;
+      --muted: rgba(243,247,251,0.85);
+      --radius: 12px;
+    }
+
+    /* reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+      color:var(--text);
+      background: linear-gradient(140deg,var(--bg-1) 0%, var(--bg-2) 60%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    /* header / hero */
+    .hero{
+      width:100%;
+      padding:18px 20px;
+      position:sticky;
+      top:0;
+      z-index:50;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .hero-inner{
+      width:100%;
+      max-width:1000px;
+      display:flex;
+      gap:16px;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo .mark{
+      width:48px;height:48px;border-radius:10px;
+      background:linear-gradient(135deg,#fff 0%, #ffd34d 100%);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;color:#0b4f6c;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    .logo h1{
+      font-size:1.05rem;margin:0;color:var(--text);font-weight:700;
+      letter-spacing:0.5px;
+    }
+
+    nav.topnav{display:flex;gap:12px;align-items:center}
+    nav.topnav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:600;
+      padding:8px 10px;border-radius:8px;
+      transition: all .15s ease;
+      font-size:0.95rem;
+    }
+    nav.topnav a:hover{
+      color:#06202a;
+      background:var(--accent);
+      transform:translateY(-1px);
+    }
+
+    /* main area */
+    main{max-width:1000px;margin:32px auto;padding:0 18px 60px;}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:22px;
+    }
+
+    /* cards */
+    .card{
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding:20px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+      min-height:150px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition: transform .18s ease, box-shadow .18s ease;
+      backdrop-filter: blur(6px);
+    }
+    .card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    }
+    .card h2{
+      margin:0 0 8px 0;
+      color:var(--accent);
+      font-size:1.15rem;
+      letter-spacing:0.6px;
+    }
+    .card p{margin:0;color:var(--muted);font-size:0.97rem}
+
+    /* special layout tweaks */
+    .card .small {
+      font-size:0.9rem;color:rgba(243,247,251,0.78)
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:14px;
+      padding:10px 14px;border-radius:10px;
+      background:var(--accent); color:#06202a;
+      font-weight:700;text-decoration:none;
+      box-shadow: 0 6px 14px rgba(255,211,77,0.12);
+    }
+
+    footer{
+      max-width:1000px;margin: 36px auto 80px;padding:18px;
+      text-align:center;color:rgba(243,247,251,0.7);font-size:0.92rem;
+    }
+    footer a{color:var(--accent);text-decoration:none;font-weight:700}
+
+    /* responsive */
+    @media (max-width: 880px){
+      .grid{grid-template-columns: 1fr;gap:18px}
+      .logo h1{font-size:1rem}
+      .hero-inner{padding-right:6px;padding-left:6px}
+      .logo .mark{width:42px;height:42px}
+    }
+  </style>
 </head>
 <body>
-  <!-- Hero / Header -->
-  <header class="hero">
-    <div class="hero-content">
-      <div class="logo-placeholder">MUN Rowing Team</div>
-      <nav>
+
+  <!-- HERO / HEADER -->
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <div class="logo">
+        <!-- replace the text logo later with your actual image -->
+        <div class="mark">M</div>
+        <div>
+          <h1>MUN Rowing Team</h1>
+          <div style="font-size:0.82rem;color:rgba(243,247,251,0.78);margin-top:3px">Quidi Vidi — Memorial University</div>
+        </div>
+      </div>
+
+      <nav class="topnav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="regatta.html">Regatta</a>
         <a href="events.html">Events</a>
-        <a href="https://www.instagram.com/munrowingclub/" target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/munrowingclub/" target="_blank" rel="noopener noreferrer">Instagram</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- MAIN PAGE: three neat boxes like your old layout -->
   <main>
-    <section class="card">
-      <h2>About</h2>
-      <p>Welcome to the Memorial University Rowing Club! We are a dedicated team of student athletes passionate about rowing in St. John’s, training on Quidi Vidi Lake and representing MUN at regattas and competitions.</p>
-    </section>
+    <div class="grid" role="main">
 
-    <section class="card">
-      <h2>Upcoming Events</h2>
-      <p>Stay tuned for our upcoming races and training sessions. Major events will be posted here with details and photos.</p>
-    </section>
+      <!-- ABOUT -->
+      <section class="card" aria-labelledby="about-h">
+        <div>
+          <h2 id="about-h">About</h2>
+          <p>
+            Welcome to the Memorial University Rowing Club. We are a student-run team training on Quidi Vidi Lake,
+            competing locally and representing MUN at regattas. We focus on fitness, teamwork and having fun on the water.
+          </p>
+        </div>
 
-    <section class="card">
-      <h2>Join the Team</h2>
-      <p>Interested in rowing with us? We welcome new members of all skill levels. Reach out through our Instagram or come see us at practice!</p>
-      <a href="https://www.instagram.com/munrowingclub/" target="_blank" class="btn">Follow us on Instagram</a>
-    </section>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+          <span class="small">Learn about our history and coaches</span>
+          <a class="btn" href="regatta.html">Read more</a>
+        </div>
+      </section>
+
+      <!-- UPCOMING EVENTS -->
+      <section class="card" aria-labelledby="events-h">
+        <div>
+          <h2 id="events-h">Upcoming Events</h2>
+          <p>
+            Training sessions and regattas will appear here. (You can post a photo and a short blurb for each event.)
+          </p>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+          <span class="small">Latest: Fall Training Camp</span>
+          <a class="btn" href="events.html">See events</a>
+        </div>
+      </section>
+
+      <!-- JOIN THE TEAM -->
+      <section class="card" aria-labelledby="join-h">
+        <div>
+          <h2 id="join-h">Join the Team</h2>
+          <p>
+            New rowers are welcome! Come to a practice or DM us on Instagram. No experience needed — we’ll get you on the water.
+          </p>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+          <span class="small">Open sign-ups each semester</span>
+          <a class="btn" href="https://www.instagram.com/munrowingclub/" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Memorial University Rowing Club | <a href="https://www.instagram.com/munrowingclub/" target="_blank">Instagram</a></p>
+    &copy; 2025 Memorial University Rowing Club — <a href="https://www.instagram.com/munrowingclub/" target="_blank" rel="noopener noreferrer">Instagram</a>
   </footer>
+
 </body>
 </html>
